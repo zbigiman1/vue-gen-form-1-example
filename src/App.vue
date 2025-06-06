@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import { useForm, REGEX } from "vue-gen-form-1"
 
@@ -83,57 +83,7 @@ const MyForm = useForm({
           },
           message: 'Passwords do not match.'
         }]
-      }, {
-        name: 'gender',
-        label: 'Gender',
-        type: 'radio',
-        options: ['female', 'male', 'custom'],
-        component: 'input',
-        value: formData.value.gender,
-        modelValue: ref(formData.value.gender),
-        validation: [{
-          role: 'required',
-          message: 'The gender is required'
-        }]
-      },
-      {
-        name: 'hobby',
-        label: 'Hobby',
-        type: 'checkbox',
-        options: ['sport', 'music', 'books'],
-        component: 'input',
-        value: formData.value.hobby,
-        modelValue: ref(formData.value.hobby),
-        validation: [{
-          role: 'required',
-          message: 'The hobbby is required'
-        }]
-      },
-      {
-        name: 'bio',
-        label: 'Bio',
-        type: 'bio',
-        rows: 4,
-        cols: 1,
-        component: 'textarea',
-        modelValue: ref(formData.value.bio),
-        validation: [{
-          role: 'required',
-          message: 'The bio is required'
-        }]
-      },
-      {
-        name: 'country',
-        label: 'Country',
-        options: ['US', 'UK'],
-        component: 'select',
-        value: formData.value.country,
-        modelValue: ref(formData.value.country),
-        validation: [{
-          role: 'required',
-          message: 'The country is required'
-        }]
-      },
+      },      
     ]
 })
 </script>
