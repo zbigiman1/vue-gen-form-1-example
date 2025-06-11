@@ -1,15 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useForm, REGEX } from "vue-gen-form-1"
+import { useForm, InputType, REGEX } from "vue-gen-form-1"
 
 const formData = ref({
   email: '',
   password: '',
   repeatPassword: '',
-  gender: '',
-  hobby: [],
-  bio: '',
-  country: ''
 })
 
 const onsubmit = () => {
@@ -26,7 +22,7 @@ const MyForm = useForm({
       {
         name: 'email',
         label: 'Email',
-        type: 'email',
+        type: InputType.EMAIL,
         component: 'input',
         modelValue: ref(formData.value.email),
         validation: [
@@ -42,7 +38,7 @@ const MyForm = useForm({
       {
         name: 'password',
         label: 'Password',
-        type: 'password',
+        type: InputType.PASSWORD,
         component: 'input',
         modelValue: ref(formData.value.password),
         condition: () => formData.value.email,
@@ -69,7 +65,7 @@ const MyForm = useForm({
       {
         name: 'repeatPassword',
         label: 'Repeat password',
-        type: 'password',
+        type: InputType.PASSWORD,
         component: 'input',
         condition: () => formData.value.email,
         modelValue: ref(formData.value.repeatPassword),
