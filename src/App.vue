@@ -22,8 +22,10 @@ const MyForm = useForm({
       {
         name: 'email',
         label: 'Email',
-        type: 'email',
         component: 'input',
+        attrs: {
+          type: 'email',
+        },
         section: 'Email',
         modelValue: ref(formData.value.email),
         validation: [
@@ -39,8 +41,10 @@ const MyForm = useForm({
       {
         name: 'password',
         label: 'Password',
-        type: 'password',
         component: 'input',
+        attrs: {
+          type: 'password',
+        },
         section: 'Password',
         modelValue: ref(formData.value.password),
         condition: () => formData.value.email,
@@ -67,8 +71,10 @@ const MyForm = useForm({
       {
         name: 'repeatPassword',
         label: 'Repeat password',
-        type: 'password',
         component: 'input',
+        attrs: {
+          type: 'password',
+        },
         section: 'Password',
         condition: () => formData.value.email,
         modelValue: ref(formData.value.repeatPassword),
@@ -82,7 +88,7 @@ const MyForm = useForm({
           },
           message: 'Passwords do not match.'
         }]
-      },      
+      },
     ]
 })
 </script>
